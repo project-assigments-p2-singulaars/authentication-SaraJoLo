@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from "./auth/login.component";
+import { LoginComponent } from "./components/auth/login.component";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-root',
@@ -11,4 +12,10 @@ import { LoginComponent } from "./auth/login.component";
 })
 export class AppComponent {
   title = 'angular-auth-app';
+  // http = inject(HttpClient);
+
+  // constructor(){
+  //   this.http.get('http://localhost:3000/users').subscribe((res)=>{
+  //     console.log(res);
+  //   })};
 }
