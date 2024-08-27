@@ -6,7 +6,7 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
     catchError((error) => {
 
       if ([404].includes(error.status)) {
-        console.log('No encontrado');
+        console.log('Usuario no encontrado');
       }
 
       const e = error.error.error.message || error.statusText;

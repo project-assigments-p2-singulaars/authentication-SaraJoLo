@@ -1,17 +1,23 @@
-<div class="login-container">
-  <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login-form">
-    <div class="form-group">
-      <label for="email">Email</label>
+<section class="login-container">
+  <img src="https://i.pinimg.com/originals/4f/59/f5/4f59f57e82f430fac8b3824bf34c453f.gif" class="imgFound">
+  <div class="form-group">
+   <form [formGroup]="loginForm" (ngSubmit)="submit()" >
+    <div class="login-form">
+      <label for="email">E-mail</label>
       <input id="email" formControlName="email" type="text" class="form-control" placeholder="Ingrese su usuario">
     </div>
-    <div class="form-group">
+    <div class="login-form">
       <label for="password">Contraseña</label>
       <input id="password" formControlName="password" type="password" class="form-control" placeholder="Ingrese su contraseña">
+      
     </div>
-    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+    <div class="login-form">
+      <button type="submit" class="btn-primary">Iniciar sesión</button>
+    </div>
   </form>
-</div>
-<section>
-  <p>No está registrado? Crear cuenta</p>
-  <a routerLink="/register">Registrarse</a>
+    <p>No está registrado?</p>
+  <ul>
+    <a routerLink="/register">Crear cuenta</a> 
+  </ul>
+  </div>
 </section>

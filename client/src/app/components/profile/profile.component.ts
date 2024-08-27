@@ -18,10 +18,14 @@ export class ProfileComponent{
   @Input() id!:string;
   private userService = inject(UserService);
   private router=inject(Router)
-  
+  user = inject(UserService);
+
   logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/home']);
   }
-
+userName(){
+this.user.getUserById('user')
+return(this.user)
+}
 }

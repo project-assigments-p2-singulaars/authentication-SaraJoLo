@@ -12,10 +12,4 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'angular-auth-app';
-  // http = inject(HttpClient);
-
-  // constructor(){
-  //   this.http.get('http://localhost:3000/users').subscribe((res)=>{
-  //     console.log(res);
-  //   })};
 }

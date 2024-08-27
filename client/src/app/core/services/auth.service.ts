@@ -1,34 +1,45 @@
 import { inject, Injectable } from '@angular/core';
 import { User } from '../../shared/models/user';
 import { HttpClient } from '@angular/common/http';
-import { catchError, of } from 'rxjs';
+import { catchError, firstValueFrom, of } from 'rxjs';
+import { LocalStorageService } from '../service/local-storage.service';
+import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment.development';
+
+type LoginResponseType = {
+  accessToken:string,
+  user:User,
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private url = 'http://localhost:3000';
-  http = inject(HttpClient);
-  token ='';
-  constructor() { }
+  apiUrl='http://localhost:3000';
+  private url = environment.apiUrl;
+  private http = inject(HttpClient);
+  private localStorageService = inject(LocalStorageService);
+  private router=inject(Router)
 
-  login(user: User){
-    return this.http.post<User>(`${this.url}/login`, user).pipe(catchError(e=>of(e)))
-  }
   
-  isAuth(){
-    return this.token.length > 0;
-  }
+  register(formgroup: any) {
+    return this.http.post<any>(`${this.apiUrl}/register`, formgroup);
 
-  register(user: User){
-    console.log(user);
-    return this.http.post<any>(`${this.url}/register`, user).subscribe(
-      response => {
-        console.log('Registro exitoso', response);
-      },
-      error => {
-        console.error('Error en el registro', error);
-      }
-    );
+    throw new Error('Method not implemented.');
+  }
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/home']);
+  }
+async login(credentials:User){
+    try{
+      const result = await firstValueFrom(this.http.post<LoginResponseType>(this.url.concat('/login'), credentials))
+
+      const {user} = result;
+      this.localStorageService.setItem('user',JSON.stringify(user))
+
+    }catch(e){
+      throw e;
+    }
   }
 }

@@ -1,6 +1,6 @@
 import { HttpEvent, HttpInterceptorFn, HttpResponse } from '@angular/common/http';
 import {  tap } from 'rxjs';
-import { LocalStorageService } from './core/local-storage.service';
+import { LocalStorageService } from '../core/service/local-storage.service';
 import { inject } from '@angular/core';
 
 export const loggerInterceptor: HttpInterceptorFn = (req, next) => {
@@ -10,7 +10,7 @@ export const loggerInterceptor: HttpInterceptorFn = (req, next) => {
   return next(req).pipe(
     tap((event: HttpEvent<any>) => {
       if (event instanceof HttpResponse) {
-        localStorageService.setItem('token', event.body.accessToken);
+        localStorage.setItem('token', event.body.accessToken);
       }
       return event;
     }))

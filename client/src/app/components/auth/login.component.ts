@@ -2,13 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
 import { User } from '../../shared/models/user';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LocalStorageService } from '../../core/service/local-storage.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -41,7 +41,7 @@ export class LoginComponent {
       this.router.navigate([`/profile`]);
 
     } catch (error) {
-      alert('ups! something occurred');
+      alert('Compruebe nuevamente los datos.');
     }
 
     

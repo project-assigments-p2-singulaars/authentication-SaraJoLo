@@ -3,6 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/auth/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { RegisterComponent } from './components/register/register/register.component';
 
 
 export const routes: Routes = [
@@ -24,5 +25,10 @@ export const routes: Routes = [
         component:ProfileComponent,
         canActivate:[AuthGuard] 
         
+      },
+      {
+        path:"register",
+        component:RegisterComponent,
+
       }
 ];

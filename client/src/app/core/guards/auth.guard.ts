@@ -9,13 +9,11 @@ export const AuthGuard: CanActivateFn = (route, state) => {
   const authService= inject(AuthService);
   const router = inject(Router);
 
- if (authService.isAuth()) {
-  return true ;
- }else{
-  alert('No permitido')
-  const url = router.createUrlTree(['/login']);
-  return url;
- }
+  if(localStorage.getItem('token'))
+    {
+      return true;
+    }
+  return false;
 
 
 }
