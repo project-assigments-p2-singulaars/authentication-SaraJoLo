@@ -4,6 +4,16 @@
       "email": "m@m.com",
       "password": "$2a$10$aZc8oeJKLOy6QP31gXlsDexB23MS.MBw1L5YlNNT0paql1hrguTFO",
       "id": 1
+    },
+    {
+      "email": "sarajorja123@gmail.com",
+      "password": "$2a$10$c9iPTrluuXgPbdWHKesqA.JPMkbe7AF.2Ua2KMLBiONHbqPe1P6PG",
+      "id": 2
+    },
+    {
+      "email": "sarajorja@gmail.com",
+      "password": "$2a$10$HdFhDVCjyeRql28i95lQYOu0Ed6s59Wz4/nXNr6QZL/5JQ8lOs3oa",
+      "id": 3
     }
   ]
 }
