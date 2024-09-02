@@ -14,6 +14,16 @@
       "email": "sarajorja@gmail.com",
       "password": "$2a$10$HdFhDVCjyeRql28i95lQYOu0Ed6s59Wz4/nXNr6QZL/5JQ8lOs3oa",
       "id": 3
+    },
+    {
+      "email": "sarajorja1@gmail.com",
+      "password": "$2a$10$6W.GPN2PYW1jXpO3Y1zWzelhQ2zrWWX3ZOzpaIJmfyKuQvYVhl6S.",
+      "id": 4
+    },
+    {
+      "email": "sarajorja12@gmail.com",
+      "password": "$2a$10$UkdPMC7a7ldnuUXZIuE/yOQIpSHFqZ3PdAMPexNvMW44xssJOVBlG",
+      "id": 5
     }
   ]
 }
